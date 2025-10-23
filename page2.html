@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HPBD</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="box">
+            <ul class="minbox">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ol class="maxbox">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+        <audio id="player" autoplay loop>
+            <source src="../music/music.mp3" type="audio/mp3" />
+        </audio>
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                const box = document.querySelector('.box');
+
+                function toggleHover() {
+                    setTimeout(() => {
+                        box.classList.add('hovered'); // Mở rộng sau 3 giây
+                    }, 3000);
+
+                    setTimeout(() => {
+                        box.classList.remove('hovered'); // Thu lại sau thêm 7 giây
+                    }, 10000);
+                }
+
+                // Gọi hàm lặp mỗi 10 giây
+                toggleHover(); // Lần đầu
+                setInterval(toggleHover, 10000); // Lặp lại mỗi 10 giây
+            });
+        </script>
+ 
+    </body>
+</html>
