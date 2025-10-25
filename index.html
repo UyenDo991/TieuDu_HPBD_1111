@@ -2,7 +2,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="icon" type="image/png" href="./img/CILKGax.png">
+		<!-- <link rel="icon" type="image/png" href="./img/CILKGax.png"> -->
         <!-- Tiêu đề của trang dòng thời gian -->
 		<title>Sinh nhật em</title>	    
         <link type="text/css" rel="stylesheet" href="./css/default.css">
@@ -25,48 +25,40 @@
 
 </head>
     <body>
-        <!-- <div class="buttons">
-            <a href="index.html" class="btn btn-bir">Sinh nhật</a>
-            <a href="timeline.html" class="btn btn-timeline">Dòng thời gian</a>
-            <a href="gallery/index.html" class="btn btn-gallery">Ảnh kĩ niệm</a>
-        </div> -->
         <div id="main">
                 <div id="wrap">
-                    <div id="text">
-                                <div id="code">
-                                <!-- 4. CHỈNH SỬA LỜI CHÚC CỦA BẠN TẠI ĐÂY-->
-                            <font color="#3500ff"><span class="say">Chúc mừng sinh nhật pé</span><br>
-                                    <span class="say">Mong em sẽ có đậu được trường em muốn vào</span><br>
-                                    <span class="say">Tuổi mới sẽ chín chắn hơn, ngày càng xinh hơn</span><br>
-                                    <span class="say"> </span><br>
-                                    <span class="say">Bớt thức khuya lại và dành thời gian nhiều học tập và bạn bè</span><br>
-                                    <span class="say">Chúc em tuổi 17 luôn xinh đẹp trong mắt ba mẹ và bạn bè</span><br>
-                                    <span class="say">Chúc em sinh nhật vui vẻ.</span><br>
-                                    <span class="say"> </span><br>
-                                    <span class="say"><span class="space"></span> -- Anh yêu Em --</span>
-                        </font></p>
+                    <div class="note">
+                        <img src="./images/textcauchuc.jpg" alt="" class="imgkhungloichuc">
+                        <div class="text-name"> 👑 Quyên Phương - 11.11 👑</div>
+                        <div class="text-loichuc"> Gửi Tiểu Du... </div>
+                        <p class="text-1">Sinh nhật vui vẻ ! Mong tuổi mới của em sẽ luôn ngập tràn tiếng cười, đầy ắp ngọt ngào và hạnh phúc nhất. 
+                            Chúc em trên hành trình trưởng thành — dũng cảm, rực rỡ, và mỗi ngày đều nhìn thấy một “em” tốt hơn, mạnh mẽ hơn và hạnh phúc hơn.
+                        </p>
                     </div>
-                </div>
-                <div id="clock-box">
-                    <span class="STYLE1"> Thời gian đón tuổi mới</span>  <!--Có thể thay đổi chổ này thành số tuổi của người bạn muốn chúc -->
-                    <div id="clock">
+                    <div class="afterNote">
+                        <p>Tiếp tục nhé....</p>
                     </div>
-                </div>
-                 <div class="note">
-                    <img src="./images/textcauchuc.jpg" alt="" class="imgkhungloichuc">
-                    <div class="text-name"> 👑 Quyên Phương - 11.11 👑</div>
-                    <div class="text-loichuc"> Gửi Tiểu Du... </div>
-                    <p class="text-1">- Chúc em sinh nhật vui vẻ ! Mong em vui vẻ mỗi ngày !Mong em mạnh khỏe dồi dào !Mong mọi đều tốt đẹp sẽ đến !
-                        Mong mỗi ước nguyện của em sẽ được hoàn thành ! Tuổi mới thì phải thật giàu thật giàu !
-                    </p>
-                </div>
-
-
-
-                <canvas id="canvas" width="1100" height="680"></canvas>
+                    <canvas id="canvas" width="1100" height="680"></canvas>
             </div>
-            
         </div>
+        <div class="iconmeme">
+            <div class="heart-container">
+                <svg viewBox="0 0 100 90" class="heart">
+                        <path id="heartPath"
+                        d="M10,30 
+                            A20,20 0,0,1 50,30 
+                            A20,20 0,0,1 90,30 
+                            Q90,60 50,85 
+                            Q10,60 10,30 Z" />
+                    <image id="icongif" href="./images/gif2.gif" width="10" height="10" />
+                </svg>
+                <div class="iconrun2">
+                    
+                </div>
+            </div>
+        </div>
+        
+
 
     <!-- Phần nhạc -->
     <!-- <audio id="player" autoplay loop>
@@ -207,7 +199,6 @@
             total_months = (end_date.getFullYear() - start_date.getFullYear())*12 + (end_date.getMonth() - start_date.getMonth())
             console.log(total_months)
 		    $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
             console.log(together)
         }));
 

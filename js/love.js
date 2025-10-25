@@ -1,7 +1,12 @@
 ﻿let note; // ✅ khai báo ở ngoài để dùng chung
-
+let main;
+let iconmeme;
+let afterNote;
 window.addEventListener("DOMContentLoaded", () => {
     note = document.querySelector('.note');
+    afterNote = document.querySelector('.afterNote');
+    main = document.querySelector('#main');
+    iconmeme = document.querySelector('.iconmeme');
 });
 (function(window){
 
@@ -12,9 +17,25 @@ window.addEventListener("DOMContentLoaded", () => {
                 return;
             }
             note.classList.add('show');
+            showAfterNote();
         }, 3000);
     }
-
+    function showAfterNote() {
+        setTimeout(() => {
+            if (!afterNote) {
+                console.error("afterNote chưa sẵn sàng!");
+                return;
+            }
+            afterNote.classList.add('show');
+            hiddenMain();
+        }, 5000);
+    }
+    function hiddenMain() {
+        setTimeout(() => {
+            main.style.display = "none";
+            iconmeme.classList.add('show');
+        }, 5000);
+    }
 
     function random(min, max) {
         return min + Math.floor(Math.random() * (max - min + 1));

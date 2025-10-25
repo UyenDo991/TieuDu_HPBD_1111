@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     /* Ảnh nền của trang thứ 2 nếu bạn muốn thay đổi thì nó tại đây */
-    background-image: url("../img/9SHW2XH.jpg");
+    /* background-image: url("../img/9SHW2XH.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
     font-size: 14px;
@@ -24,34 +24,6 @@ a {
     width: 1100px;
     height: 680px;
     margin-top: 10px;
-}
-#text {
-    width: 400px;
-    height: 425px;
-    left: 60px;
-    top: 80px;
-    position: absolute;
-}
-#code {
-    display: none;
-    font-size: 16px;
-}
-#clock-box {
-    position: absolute;
-    left: 60px;
-    top: 550px;
-    font-size: 28px;
-    display: none;
-}
-#clock-box a {
-    font-size: 28px;
-    text-decoration: none;
-}
-#clock {
-    margin-left: 48px;
-}
-#clock .digit {
-    font-size: 64px;
 }
 #canvas {
     margin: 0 auto;
