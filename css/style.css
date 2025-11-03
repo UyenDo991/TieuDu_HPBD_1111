@@ -10,8 +10,8 @@ html {
     position: absolute;
     width: 100%;
     height: 100%;
-    display: none;
-    opacity: 0;
+    display: block;
+    opacity: 1;
     text-align: center;
 }
 
@@ -29,8 +29,8 @@ html {
     top: 5%;
     width: 100%;
     height: 100%;
+    z-index: 1;
 }
-
 /* 🌸 Nét trái tim */
 .heart path {
   fill: none;
@@ -40,10 +40,9 @@ html {
   stroke-linejoin: round;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: drawHeart 21s linear forwards, fillHeart 1s ease-in 5s forwards;
+  animation: drawHeart 40s linear .2s forwards, fillHeart 3s ease-in 8s forwards;
 }
 path{
-    
     width: 50%;
     height: 50%;
 }
@@ -52,7 +51,7 @@ path{
   filter: drop-shadow(0 0 8px #fff2b0);
   offset-path: path("M10,30 A20,20 0,0,1 50,30 A20,20 0,0,1 90,30 Q90,60 50,85 Q10,60 10,30 Z");
   offset-rotate: 0deg;
-  animation: moveIconGif 5s linear forwards, flyLeft  5s ease-in 5s forwards;
+  animation: moveIconGif 10s linear forwards, flyLeft 3s ease-in 10.5s forwards;
 }
 
 /* ✨ Animation nét vẽ */
@@ -66,13 +65,33 @@ path{
 }
 
 @keyframes fillHeart {
-  from { fill: transparent; }
-  to   { fill: #ffd7e3; }
+  0% {
+    fill: transparent; 
+  }
+  80% {
+    fill: #ff004c;
+  }
+  100% {
+    fill: transparent; 
+  }
 }
 /* ✨ Animation di chuyển bút */
 @keyframes moveIconGif {
-  from { offset-distance: 0%; }
-  to { offset-distance: 100%; }
+  
+  0% {
+    stroke-dashoffset: 1000;
+    transform: scaleX(-1);
+    rotate: 0deg;
+  }
+  70% {
+    stroke-dashoffset: 0;
+    /* transform: scaleX(1); */
+    rotate: -10deg;
+  }  
+  100% {
+    offset-distance: 100%;
+    transform: scaleX(1);
+  }  
 }
 @keyframes flyLeft {
   0% {
@@ -80,8 +99,149 @@ path{
     opacity: 1;
   }
   100% {
-    transform: translate(-500px, 0) scale(0.6);
+    transform: translate(-100%, 0) scale(0.6);
     /* opacity: 0; */
+  }
+}
+/* ✨ Animation di chuyển bút 2 */
+#icongif_2 {
+    position: absolute;
+    z-index: 2;
+    filter: drop-shadow(0 0 8px #fff2b0);
+    offset-path: path("M10,30 A20,20 0,0,1 50,30 A20,20 0,0,1 90,30 Q90,60 50,85 Q10,60 10,30 Z");
+    offset-rotate: 0deg;
+    animation: moveIconGif2 17s ease-in-out 8s forwards;
+    transform: translate(-100%, 0);
+}
+@keyframes moveIconGif2 {
+  0% {
+    transform: translate(-100%, 0) scale(-1, 1);
+    opacity: 1;
+  }
+  95% {
+    transform: translate(45%, 20%) scale(-1, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(45%, 20%) scale(-1, 1);
+    opacity: 0;
+  }
+}
+
+/* ✨ Animation di chuyển bút 3 */
+#icongif_3 {
+    position: absolute;
+    z-index: 3;
+    filter: drop-shadow(0 0 8px #fff2b0);
+    offset-path: path("M10,30 A20,20 0,0,1 50,30 A20,20 0,0,1 90,30 Q90,60 50,85 Q10,60 10,30 Z");
+    offset-rotate: 0deg;
+    animation: moveIconGif3 5s ease-in-out 25s forwards;
+    transform: translate(-100%, 0);
+}
+@keyframes moveIconGif3 {
+  0% {
+    transform: translate(50%, 15%) scale(-1, 1);
+    opacity: 1;
+  }
+  90% {
+    transform: translate(50%, 15%) scale(-1, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(50%, 15%) scale(-1, 1);
+    opacity: 0;
+  }
+}
+/* ✨ Animation di chuyển bút 4 */
+#icongif_4 {
+    position: absolute;
+    z-index: 5;
+    filter: drop-shadow(0 0 8px #fff2b0);
+    offset-path: path("M10,30 A20,20 0,0,1 50,30 A20,20 0,0,1 90,30 Q90,60 50,85 Q10,60 10,30 Z");
+    offset-rotate: 0deg;
+    animation: moveIconGif4 5s ease-in-out 30s forwards;
+    transform: translate(-100%, 0);
+}
+@keyframes moveIconGif4 {
+  0% {
+    transform: translate(48%, 17%) scale(-1, 1);
+    opacity: 1;
+  }
+  70% {
+    transform: translate(48%, 19%) scale(-1, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(48%, 19%) scale(-1, 1);
+    opacity: 0;
+  }
+}
+
+/* ✨ Animation di chuyển bút 5 */
+#icongif_5 {
+    position: absolute;
+    z-index: 4;
+    /* filter: drop-shadow(0 0 8px #fff2b0); */
+    offset-path: path("M10,30 A20,20 0,0,1 50,30 A20,20 0,0,1 90,30 Q90,60 50,85 Q10,60 10,30 Z");
+    offset-rotate: 0deg;
+    animation: moveIconGif5 1s ease-in-out 1s forwards;
+    transform: translate(0, -100%);
+}
+#icongif_5:hover {
+  animation-play-state: paused;
+  transform: translate(55%, 10%) scale(1.2);
+  /* transform: scale(1.2); */
+}
+@keyframes moveIconGif5 {
+  0% {
+    transform: translate(55%, -100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(55%, 10%);
+    opacity: 1;
+  }
+}
+
+/* ✨ Animation di chuyển bút 4 */
+#icongif_6 {
+    position: absolute;
+    z-index: 3;
+    filter: drop-shadow(0 0 8px #fff2b0);
+    offset-path: path("M10,30 A20,20 0,0,1 50,30 A20,20 0,0,1 90,30 Q90,60 50,85 Q10,60 10,30 Z");
+    offset-rotate: 0deg;
+    animation: moveIconGif6 2s ease-in-out 35s forwards;
+    transform: translate(-100%, 0);
+}
+@keyframes moveIconGif6 {
+  0% {
+    transform: translate(35%, 23%) scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(22%, 23%) scale(1, 1);
+    opacity: 1;
+  }
+}
+
+/* ✨ Animation di chuyển bút 4 */
+#icongif_7 {
+    position: absolute;
+    z-index: 3;
+    filter: drop-shadow(0 0 8px #fff2b0);
+    offset-path: path("M10,30 A20,20 0,0,1 50,30 A20,20 0,0,1 90,30 Q90,60 50,85 Q10,60 10,30 Z");
+    offset-rotate: 0deg;
+    animation: moveIconGif7 1s ease-in-out 37s forwards;
+    transform: translate(-100%, 0);
+}
+@keyframes moveIconGif7 {
+  0% {
+    transform: translate(0%, 0%) scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0%, 0%) scale(1, 1);
+    opacity: 1;
   }
 }
 /* end */
