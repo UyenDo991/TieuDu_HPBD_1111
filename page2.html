@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>HPBD</title>
-        <link rel="stylesheet" href="page2.css">
+        <title>Happy Birthday</title>
+        <link rel="stylesheet" href="./css/page2.css">
+		<script type="text/javascript" src="./js/style.js" charset="utf-8"></script>
     </head>
     <body>
+        <button id="musicButton">🎵 Bật nhạc</button>
         <div class="box">
             <ul class="minbox">
                 <li></li>
@@ -23,8 +25,8 @@
                 <li></li>
             </ol>
         </div>
-        <audio id="player" autoplay loop>
-            <source src="../music/music.mp3" type="audio/mp3" />
+        <audio id="player" loop>
+            <source src="./music/music2.mp3" type="audio/mp3" />
         </audio>
         <script>
             window.addEventListener('DOMContentLoaded', () => {

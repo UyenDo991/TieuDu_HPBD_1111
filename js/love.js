@@ -2,11 +2,13 @@
 let main;
 let iconmeme;
 let afterNote;
+let player;
 window.addEventListener("DOMContentLoaded", () => {
     note = document.querySelector('.note');
     afterNote = document.querySelector('.afterNote');
     main = document.querySelector('#main');
     iconmeme = document.querySelector('.iconmeme');
+    player = document.getElementById("player"); 
 });
 (function(window){
 
@@ -597,6 +599,7 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         },
         draw: function() {
+            player.play();
             const s = this,
                 ctx = s.tree.ctx,
                 figure = s.figure;
@@ -630,7 +633,6 @@ window.addEventListener("DOMContentLoaded", () => {
             ctx.shadowColor = 'rgba(255,230,150,0.5)';
             ctx.shadowBlur = 5;
             ctx.fill();
-
             // ✨ Tia nhụy (pistils)
             // ctx.shadowBlur = 0;
             // ctx.lineWidth = .2;
@@ -677,6 +679,7 @@ window.addEventListener("DOMContentLoaded", () => {
     window.bezier = bezier;
     window.Point = Point;
     window.Tree = Tree;
-
+    
+            
 
 })(window);
