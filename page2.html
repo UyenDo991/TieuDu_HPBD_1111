@@ -40,7 +40,49 @@
                     setTimeout(() => {
                         box.classList.remove('hovered'); // Thu lại sau thêm 7 giây
                     }, 10000);
+                    const minImages = [
+                        './images/pic1.jpg',
+                        './images/pic2.jpg',
+                        './images/pic3.jpg',
+                        './images/pic4.jpg',
+                        './images/pic5.jpg',
+                        './images/pic6.jpg'
+                        ];
+
+                        const maxImages = [
+                        './images/pic7.jpg',
+                        './images/pic8.jpg',
+                        './images/pic9.jpg',
+                        './images/pic10.jpg',
+                        './images/pic11.jpg',
+                        './images/pic12.jpg'
+                        ];
+
+                        // Hàm xáo trộn mảng (Fisher–Yates)
+                        function shuffle(array) {
+                        let arr = array.slice(); // copy mảng gốc
+                        for (let i = arr.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [arr[i], arr[j]] = [arr[j], arr[i]];
+                        }
+                        return arr;
+                        }
+
+                        // Random ảnh không trùng
+                        const shuffledMin = shuffle(minImages);
+                        const shuffledMax = shuffle(maxImages);
+
+                        // Gán ảnh theo thứ tự đã xáo trộn
+                        document.querySelectorAll('.minbox li').forEach((li, index) => {
+                        li.style.background = `url('${shuffledMin[index % shuffledMin.length]}') no-repeat center/100% 100%`;
+                        });
+
+                        document.querySelectorAll('.maxbox li').forEach((li, index) => {
+                        li.style.background = `url('${shuffledMax[index % shuffledMax.length]}') no-repeat center/100% 100%`;
+                        });
+
                 }
+                
 
                 // Gọi hàm lặp mỗi 10 giây
                 toggleHover(); // Lần đầu
